@@ -30,34 +30,37 @@
     <h1>The whole landscape for building AR, mapped in one place</h1>
     <p class="lede">Browser WebAR is one path into augmented reality, and it is the one this atlas leans on for
     working examples. It sits alongside no-code creator platforms, native and game-engine builds, headset paths,
-    and a handful of tracking approaches that cut across all of them. Each category page has a comparison table
-    and, where relevant, a real project as a worked example.</p>
+    and a handful of tracking approaches that cut across all of them. Each comparison table below ends in a
+    "used in" column: where a real shipped project already uses that option, or "not yet used" where it is
+    still just mapped territory.</p>
 
     <section class="category">
       <h2>Five categories</h2>
       <div class="card-grid">
         <a class="card" href="webar.html">
           <h3>WebAR</h3>
-          <p>Runs in a phone browser at a URL. No install, no app store. Three.js, A-Frame plus MindAR,
-          WebXR, 8th Wall.</p>
+          <p>Runs in a phone browser at a URL. No install, no app store. Three.js, Babylon.js, PlayCanvas,
+          model-viewer, A-Frame plus MindAR, WebXR, 8th Wall.</p>
         </a>
         <a class="card" href="nocode.html">
           <h3>No-code / creator platforms</h3>
-          <p>Visual editors built for fast social filters and effects. Meta Spark, Lens Studio, Adobe Aero,
-          Zapworks, Niantic Studio.</p>
+          <p>Visual editors for fast social filters, plus a smaller artist and gallery category. Meta
+          Spark, Lens Studio, Adobe Aero, Zapworks, Niantic Studio, Artivive, EyeJack.</p>
         </a>
         <a class="card" href="native.html">
           <h3>Native and engine</h3>
-          <p>Full game engines and platform SDKs. Unity, Unreal, ARKit and RealityKit, ARCore.</p>
+          <p>Full game engines and platform SDKs. Unity, Unreal, ARKit and RealityKit, ARCore, Lightship
+          ARDK, OpenXR, Snapdragon Spaces.</p>
         </a>
         <a class="card" href="tracking.html">
           <h3>Tracking approaches</h3>
-          <p>The technique underneath any of the above: marker, markerless SLAM, face, hand, GPS,
-          cloud anchors.</p>
+          <p>The technique underneath any of the above: marker, object, markerless SLAM, face, hand,
+          body, GPS, LiDAR, cloud anchors.</p>
         </a>
         <a class="card" href="hardware.html">
           <h3>Hardware and headsets</h3>
-          <p>What the work runs on: handheld phone, Quest passthrough, Vision Pro, HoloLens, smart glasses.</p>
+          <p>What the work runs on: handheld phone, Quest passthrough, Vision Pro, Android XR, Magic
+          Leap 2, HoloLens, smart glasses.</p>
         </a>
       </div>
     </section>
@@ -100,6 +103,20 @@
         <dt>Cloud anchors</dt>
         <dd>A 3D anchor point saved to a server so multiple devices can see the same virtual object fixed
         to the same real-world spot, at the same time or later.</dd>
+
+        <dt>LiDAR</dt>
+        <dd>A dedicated depth sensor on some phones and tablets (Pro-model iPhones and iPads) that
+        measures real-world geometry directly, instead of inferring it from the camera image alone.
+        Gives more accurate occlusion and instant plane detection than camera-only SLAM.</dd>
+
+        <dt>Semantic segmentation</dt>
+        <dd>Labeling regions of a camera image by what they are (sky, ground, a building, a person),
+        rather than just their raw pixels. Used by more spatially aware AR SDKs to let content react
+        differently to different kinds of surface.</dd>
+
+        <dt>OpenXR</dt>
+        <dd>An open, cross-platform standard for VR/AR APIs, meant to let one codebase target multiple
+        headsets and runtimes without separate vendor-specific code for each one.</dd>
 
         <dt>Vibecoding fit</dt>
         <dd>Shorthand used across this atlas for how much of a path can be built by describing intent to a

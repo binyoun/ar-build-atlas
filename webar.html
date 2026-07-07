@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WebAR &middot; AR Build Atlas</title>
-<meta name="description" content="Browser-based AR frameworks: Three.js, A-Frame plus MindAR, WebXR, 8th Wall, compared with real project examples.">
+<meta name="description" content="Browser-based AR frameworks: Three.js, Babylon.js, PlayCanvas, model-viewer, A-Frame plus MindAR, WebXR, 8th Wall, compared with real project examples.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -29,8 +29,8 @@
     <p class="eyebrow">Category 1 of 5</p>
     <h1>WebAR: augmented reality that runs at a URL</h1>
     <p class="lede">No app store, no install, no account. A visitor scans a QR code or taps a link and the
-    camera, tracking, and 3D all run inside the phone browser. This is the category every project below
-    was actually shipped in, so it gets the most worked examples.</p>
+    camera, tracking, and 3D all run inside the phone browser. This is the category every shipped project
+    below actually used, so the "used in" column is the most filled in on this page.</p>
 
     <section class="category">
       <div class="table-wrap">
@@ -44,6 +44,7 @@
               <th>Distribution</th>
               <th>Offline capable</th>
               <th>Vibecoding fit</th>
+              <th>Used in</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +57,7 @@
               <td>URL, any modern browser</td>
               <td>Yes, if all assets are self-hosted rather than pulled from a CDN at runtime</td>
               <td class="fit-high">High. Plain text files, exactly what a coding agent is best at.</td>
+              <td class="used-in">Uncanny Garden, Touch of Water, gelora-soil (vanitas)</td>
             </tr>
             <tr>
               <td class="name">A-Frame + MindAR</td>
@@ -66,6 +68,45 @@
               <td>URL</td>
               <td>Yes, if self-hosted</td>
               <td class="fit-high">High. Config-driven setups (one entry per work) fit an agent well.</td>
+              <td class="used-in">Elemental WebAR (RMIT teaching kit)</td>
+            </tr>
+            <tr>
+              <td class="name">Babylon.js</td>
+              <td>A JavaScript 3D engine in the same territory as Three.js, but with more built in out of
+              the box: a hosted node material editor, physics, and animation curve tooling.</td>
+              <td>Free, open source</td>
+              <td>Medium to steep, similar to Three.js, with less that needs to be hand-built</td>
+              <td>URL</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-high">High. Same plain-JS profile as Three.js.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">PlayCanvas</td>
+              <td>A WebGL game engine with both a hosted, collaborative visual editor for scene assembly
+              and a code layer for behavior, sitting between Three.js's roll-your-own approach and a full
+              desktop engine.</td>
+              <td>Free tier, paid tiers for private projects and team seats</td>
+              <td>Medium. The editor covers layout, code covers logic.</td>
+              <td>URL, either self-hosted export or a PlayCanvas-hosted link</td>
+              <td>Yes, if exported and self-hosted</td>
+              <td class="fit-med">Medium. The code layer is agent-friendly, but scene setup lives in their
+              hosted editor, not in files an agent can edit directly.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">model-viewer</td>
+              <td>Google's <code>&lt;model-viewer&gt;</code> web component: one HTML tag drops a 3D model
+              into a page and hands off to the phone's native AR viewer (Scene Viewer on Android, AR
+              Quick Look on iOS) instead of running its own AR session.</td>
+              <td>Free, open source</td>
+              <td>Very low, one HTML tag</td>
+              <td>URL for the page; the AR view itself opens the OS-level viewer app</td>
+              <td>The model file can be self-hosted; the OS viewer itself is a system component you do
+              not control</td>
+              <td class="fit-med">Medium for the web page itself, but there is no custom AR interaction
+              to build since the OS viewer owns that part entirely.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">WebXR Device API</td>
@@ -76,6 +117,7 @@
               <td>URL, Chrome for Android only in practice; no iOS Safari support as of this writing</td>
               <td>Yes</td>
               <td class="fit-med">Medium. The gap is platform support, not code complexity.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">8th Wall</td>
@@ -88,46 +130,17 @@
               <td>No. Requires their runtime and a license check at load time.</td>
               <td class="fit-med">Medium. Still text-based code, but you are working inside their SDK's
               constraints rather than a fully open stack.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Where this shows up in shipped work</h2>
-
-      <div class="case-study">
-        <span class="tag">Uncanny Garden</span>
-        <p>Three.js plus MediaPipe HandLandmarker: five elements bloom from hand gestures, tracked entirely
-        in-browser with no marker and no server. Shows the ceiling of what raw Three.js plus a tracking
-        library can do without any hosted AR SDK.</p>
-      </div>
-
-      <div class="case-study">
-        <span class="tag">Elemental WebAR (RMIT teaching kit)</span>
-        <p>A-Frame plus MindAR image tracking, config-driven: one JSON entry and two asset files per student
-        work, no code changes needed to add a new piece. Shows the gentler on-ramp for students who have
-        never touched 3D code.</p>
-      </div>
-
-      <div class="case-study">
-        <span class="tag">Touch of Water</span>
-        <p>Three.js with DRACOLoader-compressed models and Howler.js audio, paired with a Leaflet satellite
-        map landing page. Five student teams each contributed a GPS point, model, and sound to one shared
-        engine.</p>
-      </div>
-
-      <div class="case-study">
-        <span class="tag">gelora-soil (vanitas)</span>
-        <p>Three.js plus MediaPipe HandLandmarker and FaceLandmarker together: a procedural flower rooted
-        to a palm or grown from a mouth, with self-hosted MediaPipe models and wasm to avoid depending on
-        a CDN at a venue with restricted wifi.</p>
-      </div>
-
       <div class="note">
-        <strong>A recurring lesson across these projects:</strong> MediaPipe's wasm runtime and model files
-        are CDN-hosted by default. Venue wifi that cannot reach jsdelivr or Google's storage will break hand
-        or face tracking silently. Self-hosting those files under <code>public/</code> is the fix, and
-        gelora-soil already does this.
+        <strong>A recurring lesson across the projects above:</strong> MediaPipe's wasm runtime and model
+        files are CDN-hosted by default. Venue wifi that cannot reach jsdelivr or Google's storage will
+        break hand or face tracking silently. Self-hosting those files under <code>public/</code> is the
+        fix, and gelora-soil already does this.
       </div>
     </section>
   </div>

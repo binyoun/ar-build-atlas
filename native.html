@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Native and engine &middot; AR Build Atlas</title>
-<meta name="description" content="Native and game-engine AR paths: Unity plus AR Foundation, Unreal Engine, ARKit and RealityKit, ARCore.">
+<meta name="description" content="Native and game-engine AR paths: Unity plus AR Foundation, Unreal Engine, ARKit and RealityKit, ARCore, Lightship ARDK, OpenXR, Snapdragon Spaces.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -45,6 +45,7 @@
               <th>Distribution</th>
               <th>Offline capable</th>
               <th>Vibecoding fit</th>
+              <th>Used in</th>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +59,7 @@
               <td>Yes, once installed</td>
               <td class="fit-med">Medium. An agent can write solid C# scripts, but scene assembly, prefab
               wiring, and inspector settings happen by hand in the Unity Editor.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Unity + Vuforia</td>
@@ -68,6 +70,20 @@
               <td>Same as Unity above</td>
               <td>Yes, once installed</td>
               <td class="fit-med">Medium, same constraint as Unity above.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">Niantic Lightship ARDK</td>
+              <td>A native SDK from Niantic Spatial (with a Unity plugin) adding spatially aware AR
+              beyond basic plane detection: semantic segmentation of the camera feed (sky, ground,
+              buildings, people), meshing, and depth.</td>
+              <td>Free tier, usage-based paid tiers</td>
+              <td>Medium to high, an additional SDK layered on top of Unity or native iOS/Android</td>
+              <td>App store</td>
+              <td>Yes once installed, though some features depend on cloud services</td>
+              <td class="fit-med">Medium, same constraint as Unity above: scripts are agent-friendly,
+              engine wiring is not.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Unreal Engine (AR)</td>
@@ -79,6 +95,7 @@
               <td>Yes, once installed</td>
               <td class="fit-low">Low. Blueprint visual scripting does not map well to a text-based coding
               agent, and C++ plus the editor is a heavier lift than the other options here.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">ARKit + RealityKit</td>
@@ -91,6 +108,7 @@
               <td>Yes, once installed</td>
               <td class="fit-med">Medium. An agent can write Swift well, but testing needs a physical
               iPhone or simulator and a Mac, which is a real barrier outside that ecosystem.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">ARCore + Kotlin</td>
@@ -101,6 +119,31 @@
               <td>Google Play, or a sideloaded APK</td>
               <td>Yes, once installed</td>
               <td class="fit-med">Medium, same profile as ARKit above.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">OpenXR</td>
+              <td>An open, cross-platform standard (not a single vendor's product) for VR/AR APIs, meant
+              to let one codebase target multiple headsets and runtimes without separate vendor-specific
+              code paths.</td>
+              <td>Free, an open specification with open implementations</td>
+              <td>High. Usually worked with through an engine (Unity, Unreal) rather than raw.</td>
+              <td>Depends on the target platform's app store</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Low to medium, same constraint as whichever engine it is paired with.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">Snapdragon Spaces</td>
+              <td>Qualcomm's AR developer platform for Snapdragon-powered smart glasses and headsets:
+              hand tracking, plane detection, and image tracking as a native SDK aimed at emerging XR
+              hardware built on Qualcomm chips.</td>
+              <td>Free SDK; hardware determines the real cost</td>
+              <td>Medium to high</td>
+              <td>App store or sideload, tied to Snapdragon-based devices</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium, same constraint as Unity/native above.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
           </tbody>
         </table>
@@ -109,9 +152,10 @@
       <div class="note">
         <strong>None of the projects behind this atlas use this category yet.</strong> Everything shipped
         so far has stayed inside the browser. If a future piece genuinely needs app-store distribution,
-        offline installation with no network at all, or console-grade rendering that WebGL cannot reach,
-        this is the honest next step, and it is worth treating as a real scope change rather than
-        something to vibecode the same way as a WebAR project.
+        offline installation with no network at all, spatial features WebGL cannot reach (mesh occlusion,
+        semantic segmentation), or targets emerging headset hardware, this is the honest next step, and it
+        is worth treating as a real scope change rather than something to vibecode the same way as a
+        WebAR project.
       </div>
     </section>
   </div>

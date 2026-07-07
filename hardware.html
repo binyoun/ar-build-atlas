@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hardware and headsets &middot; AR Build Atlas</title>
-<meta name="description" content="AR hardware options: handheld phone, Quest passthrough, Apple Vision Pro, HoloLens, smart glasses.">
+<meta name="description" content="AR hardware options: handheld phone, Quest passthrough, Apple Vision Pro, HoloLens, Magic Leap 2, Android XR, smart glasses.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -44,6 +44,7 @@
               <th>Distribution</th>
               <th>Offline capable</th>
               <th>Vibecoding fit</th>
+              <th>Used in</th>
             </tr>
           </thead>
           <tbody>
@@ -55,8 +56,8 @@
               <td>Whatever the software category above requires</td>
               <td>Whatever the software category above requires</td>
               <td>Whatever the software category above requires</td>
-              <td class="fit-high">Same as the chosen software path. Everything shipped so far runs
-              here.</td>
+              <td class="fit-high">Same as the chosen software path.</td>
+              <td class="used-in">Every project behind this atlas</td>
             </tr>
             <tr>
               <td class="name">Meta Quest (passthrough MR)</td>
@@ -69,6 +70,7 @@
               <td>Yes, once installed</td>
               <td class="fit-med">Medium. WebXR-in-headset stays vibecodable; the native SDK path
               inherits the same constraints as the native and engine category.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Apple Vision Pro</td>
@@ -80,29 +82,66 @@
               <td>Yes, once installed</td>
               <td class="fit-med">Medium, same profile as ARKit in the native and engine category, with
               a much smaller installed base to reach.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">Android XR</td>
+              <td>Google's XR platform (headset hardware from partners such as Samsung) combining
+              passthrough mixed reality with on-device AI assistance, positioned as a newer competitor
+              to Quest and Vision Pro.</td>
+              <td>Hardware cost varies by manufacturer</td>
+              <td>Medium to high, via Android XR's SDK, closer in spirit to ARCore than to Unity/Unreal</td>
+              <td>Google Play, or sideload</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium, similar profile to ARCore development generally.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">Magic Leap 2</td>
+              <td>An enterprise-focused optical see-through headset (a genuinely transparent display,
+              not video passthrough), still actively sold into field service, medical, and industrial
+              use cases where HoloLens has pulled back.</td>
+              <td>Expensive, enterprise-oriented</td>
+              <td>High</td>
+              <td>Enterprise deployment tools, not a consumer app store</td>
+              <td>Yes, once installed</td>
+              <td class="fit-low">Low. Niche tooling and a narrow, enterprise-oriented ecosystem.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">HoloLens 2</td>
-              <td>An enterprise-focused optical see-through headset (a genuinely transparent display,
-              not a video passthrough). Microsoft has deprioritized new hardware here, so treat this row
-              as legacy rather than a current recommendation.</td>
+              <td>Also an enterprise-focused optical see-through headset. Microsoft has deprioritized new
+              hardware here, so treat this row as legacy rather than a current recommendation.</td>
               <td>Expensive, enterprise-oriented</td>
               <td>High</td>
               <td>Enterprise deployment tools, not a consumer app store</td>
               <td>Yes, once installed</td>
               <td class="fit-low">Low. Niche tooling and a shrinking ecosystem.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
-              <td class="name">Smart glasses</td>
-              <td>Two different things worth telling apart: Snap Spectacles (a real, if limited, AR
-              display with a Lens Studio development path) and Ray-Ban Meta glasses (camera, audio, and
-              on-device AI, with no AR display at all as of this writing).</td>
-              <td>Developer kits and consumer units vary widely</td>
+              <td class="name">Smart glasses, camera-only</td>
+              <td>Devices like Ray-Ban Meta glasses: camera, audio, and on-device AI, with no AR visual
+              display at all. Useful for capture and voice interaction, not for showing virtual content.</td>
+              <td>Consumer hardware pricing</td>
+              <td>Low, mostly a companion app, no AR display to build for</td>
+              <td>Platform-locked companion app</td>
+              <td>No</td>
+              <td class="fit-low">Low. There is no AR display surface to develop for.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">Smart glasses, with display</td>
+              <td>Devices like Snap Spectacles (developer program) and Meta Ray-Ban Display glasses: a
+              real, if limited, in-lens display, distinct from the camera-only glasses above.</td>
+              <td>Developer kits and consumer units vary widely, generally expensive relative to a
+              phone</td>
               <td>Depends on the device; Spectacles inherits Lens Studio's curve</td>
               <td>Platform-locked in both cases</td>
               <td>No</td>
               <td class="fit-low">Low. Same constraint as the no-code platforms these devices are tied
               to.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
           </tbody>
         </table>

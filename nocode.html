@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>No-code / creator platforms &middot; AR Build Atlas</title>
-<meta name="description" content="No-code and creator AR platforms: Meta Spark, Lens Studio, Adobe Aero, Zapworks, Niantic Studio.">
+<meta name="description" content="No-code and creator AR platforms: Meta Spark, Lens Studio, Adobe Aero, Zapworks, Niantic Studio, Artivive, EyeJack, Blippbuilder.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -28,11 +28,13 @@
   <div class="wrap">
     <p class="eyebrow">Category 2 of 5</p>
     <h1>No-code and creator platforms</h1>
-    <p class="lede">Visual, node-based editors built by social platforms for fast filters and effects.
-    The trade you make here is speed and reach for a specific platform, against ownership of the pipeline
-    and, in most cases, the code itself.</p>
+    <p class="lede">Visual, node-based editors built by social platforms for fast filters and effects,
+    plus a smaller set of platforms built specifically for artists attaching AR to physical work. The
+    trade you make here is speed and reach for a specific platform or gallery use case, against ownership
+    of the pipeline and, in most cases, the code itself.</p>
 
     <section class="category">
+      <h2>Social and marketing platforms</h2>
       <div class="table-wrap">
         <table class="compare">
           <thead>
@@ -44,6 +46,7 @@
               <th>Distribution</th>
               <th>Offline capable</th>
               <th>Vibecoding fit</th>
+              <th>Used in</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +59,7 @@
               <td>No, needs the Meta app camera</td>
               <td class="fit-low">Low. The graph and asset work happens inside the desktop app; a coding
               agent can help with the scripting layer only.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Lens Studio (Snap)</td>
@@ -65,8 +69,9 @@
               <td>Low to medium</td>
               <td>Snapchat only</td>
               <td>No, needs Snapchat's camera</td>
-              <td class="fit-low">Low to medium. Scripts are text and agent-friendly; the visual graph
+              <td class="fit-med">Low to medium. Scripts are text and agent-friendly; the visual graph
               and asset wiring are not.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Adobe Aero</td>
@@ -77,6 +82,7 @@
               <td>Aero app, or a shareable web link/embed</td>
               <td>Aero app needed, no browser-only path</td>
               <td class="fit-low">Low. This is a visual-first tool by design.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Zapworks (Zappar)</td>
@@ -86,7 +92,9 @@
               <td>Low to medium</td>
               <td>Zappar app, or WebAR via a universal link</td>
               <td>No, needs their runtime</td>
-              <td class="fit-low">Low to medium. The scripting layer is agent-friendly, the builder is not.</td>
+              <td class="fit-med">Low to medium. The scripting layer is agent-friendly, the builder is
+              not.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Niantic Studio</td>
@@ -98,21 +106,84 @@
               <td>No</td>
               <td class="fit-low">Low. Same tracking engine as 8th Wall underneath, but the no-code layer
               removes most of the room for hand-written code.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">Blippbuilder (Blippar)</td>
+              <td>A web-based, no-code AR campaign builder aimed at brands and marketing: drag-and-drop
+              scenes with image or plane tracking.</td>
+              <td>Subscription</td>
+              <td>Low to medium</td>
+              <td>Blippar app, or a WebAR link depending on plan</td>
+              <td>No</td>
+              <td class="fit-low">Low. Same profile as the other builder tools above.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Artist and gallery platforms</h2>
+      <p>A smaller, less code-oriented category worth knowing about specifically because it targets the
+      use case a lens-based and installation artist actually has: attaching AR to a printed photograph,
+      canvas, or gallery wall label, without building any tracking yourself.</p>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What it is</th>
+              <th>Cost</th>
+              <th>Learning curve</th>
+              <th>Distribution</th>
+              <th>Offline capable</th>
+              <th>Vibecoding fit</th>
+              <th>Used in</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">Artivive</td>
+              <td>A platform built specifically for artists: upload a video or animation, tag a printed
+              image, canvas, or artwork as the trigger, and visitors view it through the Artivive app or
+              an embeddable web view.</td>
+              <td>Free tier for a small number of works, paid tiers for more</td>
+              <td>Very low. Upload media, tag a trigger image, done.</td>
+              <td>Artivive app, or an embeddable WebAR view on higher tiers</td>
+              <td>No, needs the app or a live web view</td>
+              <td class="fit-low">Low. This is upload-and-tag, not a coding surface at all.</td>
+              <td class="used-in none">Not yet used</td>
+            </tr>
+            <tr>
+              <td class="name">EyeJack</td>
+              <td>Another artist and gallery-focused AR platform, similar image-trigger model to
+              Artivive, with its own app and curation tools aimed at exhibitions and print/canvas work.</td>
+              <td>Subscription, tiered</td>
+              <td>Low</td>
+              <td>EyeJack app</td>
+              <td>No</td>
+              <td class="fit-low">Low, same profile as Artivive above.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="note">
-        <strong>Ownership status changes fast here.</strong> Meta has scaled back public access to Spark
-        AR/Meta Spark before, and platform-owned tools like this can be paused or closed to new creators
-        with little notice. Confirm current public availability before planning real work around any row
-        in this table.
+        <strong>Worth a real look for gallery contexts.</strong> Artivive and EyeJack solve a narrower
+        problem than everything else on this page: an audience member looking at a physical print or
+        canvas, with a phone, and no QR code friction the platform hasn't already solved. For a piece
+        that lives on a wall rather than in someone's hand from the start, one of these two may beat
+        building a custom WebAR image-tracking flow from scratch, purely on visitor-experience grounds,
+        even though neither is a coding surface an agent can help much with.
       </div>
 
-      <p>None of the projects behind this atlas were built on a no-code platform. If a future project
-      needs a fast, disposable social filter rather than a durable, ownable piece, this category is the
-      fit, and the case studies live on the <a href="webar.html">WebAR</a> page instead.</p>
+      <div class="note">
+        <strong>Ownership status changes fast in this category overall.</strong> Meta has scaled back
+        public access to Spark AR/Meta Spark before, and platform-owned tools like this can be paused or
+        closed to new creators with little notice. Confirm current public availability before planning
+        real work around any row in either table above.
+      </div>
     </section>
   </div>
 </main>

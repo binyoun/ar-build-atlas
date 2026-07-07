@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tracking approaches &middot; AR Build Atlas</title>
-<meta name="description" content="Tracking techniques underneath any AR platform: marker, markerless SLAM, face, hand, GPS, cloud anchors.">
+<meta name="description" content="Tracking techniques underneath any AR platform: marker, markerless SLAM, face, hand, body, object, GPS, LiDAR, cloud anchors.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -44,6 +44,7 @@
               <th>Distribution</th>
               <th>Offline capable</th>
               <th>Vibecoding fit</th>
+              <th>Used in</th>
             </tr>
           </thead>
           <tbody>
@@ -57,6 +58,20 @@
               <td>Depends on the chosen platform</td>
               <td>Yes, if self-hosted</td>
               <td class="fit-high">High, with MindAR specifically.</td>
+              <td class="used-in">Elemental WebAR (RMIT teaching kit)</td>
+            </tr>
+            <tr>
+              <td class="name">Object tracking</td>
+              <td>Recognizes and tracks a specific 3D object, not just a flat image, so content anchors
+              to it correctly from any angle (Vuforia Object Targets, ARKit Object Detection against a
+              pre-scanned reference object).</td>
+              <td>Free (ARKit) to subscription (Vuforia)</td>
+              <td>Medium to high; needs a pre-scanned 3D reference of the object, not just a photo</td>
+              <td>Depends on the chosen platform</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-med">Medium. The scanning and reference-object step is a real workflow step
+              outside code, not something an agent can shortcut.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Markerless SLAM / plane detection</td>
@@ -67,6 +82,7 @@
               <td>Depends on the chosen platform</td>
               <td>Yes</td>
               <td class="fit-med">Medium, and platform-dependent.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Face tracking</td>
@@ -77,6 +93,7 @@
               <td>Depends on the chosen platform</td>
               <td>Yes, if self-hosted</td>
               <td class="fit-high">High, with MediaPipe specifically.</td>
+              <td class="used-in">gelora-soil (vanitas), grow-from-the-mouth mode</td>
             </tr>
             <tr>
               <td class="name">Hand tracking</td>
@@ -87,6 +104,19 @@
               <td>Depends on the chosen platform</td>
               <td>Yes, if self-hosted</td>
               <td class="fit-high">High, with MediaPipe specifically.</td>
+              <td class="used-in">Uncanny Garden, gelora-soil (vanitas), palm mode</td>
+            </tr>
+            <tr>
+              <td class="name">Body / pose tracking</td>
+              <td>Full-body skeletal tracking (MediaPipe Pose Landmarker, ARKit and ARCore's body
+              tracking) drives effects from a person's whole posture rather than a hand or face alone.</td>
+              <td>Free (MediaPipe, ARKit, ARCore)</td>
+              <td>Medium, similar profile to hand and face tracking</td>
+              <td>Depends on the chosen platform</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-high">High with MediaPipe specifically, same as hand and face tracking
+              above.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Location-based / GPS AR</td>
@@ -98,6 +128,19 @@
               <td>Partial, needs a live GPS fix</td>
               <td class="fit-med">Medium. Straightforward code, but accuracy is a hardware limit, not a
               coding one.</td>
+              <td class="used-in">Touch of Water, landing map placement only, not AR anchoring itself</td>
+            </tr>
+            <tr>
+              <td class="name">Depth / LiDAR sensing</td>
+              <td>A dedicated depth sensor (LiDAR on Pro-model iPhones and iPads) gives precise real-world
+              geometry: accurate occlusion of virtual objects behind real ones, instant plane detection,
+              and room-scale meshing without camera-only SLAM's guesswork.</td>
+              <td>Free API, but requires LiDAR-equipped hardware specifically</td>
+              <td>Medium, mostly ARKit's depth and scene-geometry APIs</td>
+              <td>iOS only, and only on LiDAR-equipped devices</td>
+              <td>Yes</td>
+              <td class="fit-med">Medium, same constraint as native ARKit work generally.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
             <tr>
               <td class="name">Cloud anchors</td>
@@ -110,36 +153,18 @@
               <td>No, needs the anchor-resolving service</td>
               <td class="fit-med">Medium. The client code is agent-friendly; the shared-state backend
               is a genuinely new piece, not just more of the same.</td>
+              <td class="used-in none">Not yet used</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Which of Bin's projects use which</h2>
-
-      <div class="case-study">
-        <span class="tag">Image / marker tracking</span>
-        <p>Elemental WebAR (RMIT teaching kit) uses MindAR image targets, one printed or photographed
-        marker per student work.</p>
-      </div>
-
-      <div class="case-study">
-        <span class="tag">Hand tracking</span>
-        <p>Uncanny Garden's five-element gesture system and gelora-soil's default palm-rooted growth mode
-        both use MediaPipe HandLandmarker.</p>
-      </div>
-
-      <div class="case-study">
-        <span class="tag">Face tracking</span>
-        <p>gelora-soil's "grow from the mouth" mode uses MediaPipe FaceLandmarker, deriving openness,
-        stability, and tilt from face mesh geometry instead of a hand.</p>
-      </div>
-
       <div class="note">
-        <strong>An honest gap.</strong> Touch of Water uses GPS, but only to place editions on a Leaflet
-        landing map, not to anchor the AR content itself. No project here yet uses markerless SLAM,
-        true location-anchored AR, or cloud anchors. A multi-visitor, shared-anchor piece would be the
-        first real reason to reach for that last one.
+        <strong>The pattern worth noticing:</strong> everything with a "used" entry above is a technique
+        MediaPipe or MindAR handles for free, in-browser. Everything still marked "not yet used" either
+        needs specialized hardware (LiDAR), a pre-scanned physical reference (object tracking), or a
+        real backend (cloud anchors). None of that is out of reach, it is just a different, larger kind
+        of project than a single WebAR page.
       </div>
     </section>
   </div>
