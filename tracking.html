@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking approaches &middot; AR Build Atlas</title>
+<meta name="description" content="Tracking techniques underneath any AR platform: marker, markerless SLAM, face, hand, GPS, cloud anchors.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+    <nav class="primary">
+      <a href="index.html">overview</a>
+      <a href="webar.html">webar</a>
+      <a href="nocode.html">no-code</a>
+      <a href="native.html">native and engine</a>
+      <a href="tracking.html" aria-current="page">tracking</a>
+      <a href="hardware.html">hardware</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Category 4 of 5</p>
+    <h1>Tracking approaches</h1>
+    <p class="lede">This is the layer underneath every platform in the other four categories: the actual
+    technique used to anchor virtual content to the real world. Picking the tracking approach usually
+    narrows the platform choice faster than starting from the platform.</p>
+
+    <section class="category">
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What it is</th>
+              <th>Cost</th>
+              <th>Learning curve</th>
+              <th>Distribution</th>
+              <th>Offline capable</th>
+              <th>Vibecoding fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">Image / marker tracking</td>
+              <td>Recognizes a flat printed image (MindAR, Vuforia, 8th Wall image targets) and anchors
+              content to it. The most reliable and lowest-compute option, at the cost of needing a
+              physical printed marker.</td>
+              <td>Free (MindAR) to subscription (Vuforia, 8th Wall)</td>
+              <td>Low to medium</td>
+              <td>Depends on the chosen platform</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-high">High, with MindAR specifically.</td>
+            </tr>
+            <tr>
+              <td class="name">Markerless SLAM / plane detection</td>
+              <td>The phone maps the room live and tracks its own position in it, no printed marker
+              needed (ARKit, ARCore, WebXR hit-test).</td>
+              <td>Free, bundled into the platform</td>
+              <td>Medium to high: more compute, more edge cases (lighting, texture-poor surfaces)</td>
+              <td>Depends on the chosen platform</td>
+              <td>Yes</td>
+              <td class="fit-med">Medium, and platform-dependent.</td>
+            </tr>
+            <tr>
+              <td class="name">Face tracking</td>
+              <td>A live face mesh drives effects (MediaPipe FaceLandmarker, ARKit ARFaceAnchor, or
+              Lens Studio and Spark's built-in face effects).</td>
+              <td>Free (MediaPipe, ARKit, ARCore) to platform-locked (Lens Studio, Spark)</td>
+              <td>Medium</td>
+              <td>Depends on the chosen platform</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-high">High, with MediaPipe specifically.</td>
+            </tr>
+            <tr>
+              <td class="name">Hand tracking</td>
+              <td>Live hand landmarks drive gesture and interaction (MediaPipe HandLandmarker, or
+              ARKit/Vision hand pose).</td>
+              <td>Free</td>
+              <td>Medium</td>
+              <td>Depends on the chosen platform</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-high">High, with MediaPipe specifically.</td>
+            </tr>
+            <tr>
+              <td class="name">Location-based / GPS AR</td>
+              <td>Anchors content to real-world coordinates rather than a visual feature, so it appears
+              at the same physical spot for anyone standing there.</td>
+              <td>Free (raw geolocation) to subscription (8th Wall geo tools)</td>
+              <td>Medium: GPS accuracy on phones is loose, usually a few meters</td>
+              <td>Depends on the chosen platform</td>
+              <td>Partial, needs a live GPS fix</td>
+              <td class="fit-med">Medium. Straightforward code, but accuracy is a hardware limit, not a
+              coding one.</td>
+            </tr>
+            <tr>
+              <td class="name">Cloud anchors</td>
+              <td>A 3D anchor saved to a server so multiple visitors see the same virtual object fixed
+              to the same real spot, together or at different times (ARCore Cloud Anchors, Azure Spatial
+              Anchors).</td>
+              <td>Free tier then usage-based</td>
+              <td>Medium to high: adds a backend and multi-device sync on top of tracking itself</td>
+              <td>Depends on the chosen platform</td>
+              <td>No, needs the anchor-resolving service</td>
+              <td class="fit-med">Medium. The client code is agent-friendly; the shared-state backend
+              is a genuinely new piece, not just more of the same.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Which of Bin's projects use which</h2>
+
+      <div class="case-study">
+        <span class="tag">Image / marker tracking</span>
+        <p>Elemental WebAR (RMIT teaching kit) uses MindAR image targets, one printed or photographed
+        marker per student work.</p>
+      </div>
+
+      <div class="case-study">
+        <span class="tag">Hand tracking</span>
+        <p>Uncanny Garden's five-element gesture system and gelora-soil's default palm-rooted growth mode
+        both use MediaPipe HandLandmarker.</p>
+      </div>
+
+      <div class="case-study">
+        <span class="tag">Face tracking</span>
+        <p>gelora-soil's "grow from the mouth" mode uses MediaPipe FaceLandmarker, deriving openness,
+        stability, and tilt from face mesh geometry instead of a hand.</p>
+      </div>
+
+      <div class="note">
+        <strong>An honest gap.</strong> Touch of Water uses GPS, but only to place editions on a Leaflet
+        landing map, not to anchor the AR content itself. No project here yet uses markerless SLAM,
+        true location-anchored AR, or cloud anchors. A multi-visitor, shared-anchor piece would be the
+        first real reason to reach for that last one.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

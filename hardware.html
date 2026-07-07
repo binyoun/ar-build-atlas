@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware and headsets &middot; AR Build Atlas</title>
+<meta name="description" content="AR hardware options: handheld phone, Quest passthrough, Apple Vision Pro, HoloLens, smart glasses.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+    <nav class="primary">
+      <a href="index.html">overview</a>
+      <a href="webar.html">webar</a>
+      <a href="nocode.html">no-code</a>
+      <a href="native.html">native and engine</a>
+      <a href="tracking.html">tracking</a>
+      <a href="hardware.html" aria-current="page">hardware</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Category 5 of 5</p>
+    <h1>Hardware and headsets</h1>
+    <p class="lede">What the work actually runs on. Every category before this one defaults to a handheld
+    phone; this page is about the cases where a headset changes what an installation can ask of a
+    visitor.</p>
+
+    <section class="category">
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What it is</th>
+              <th>Cost</th>
+              <th>Learning curve</th>
+              <th>Distribution</th>
+              <th>Offline capable</th>
+              <th>Vibecoding fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">Handheld phone</td>
+              <td>The default target for everything in the other four categories. A visitor holds their
+              own device, one hand occupied by the phone.</td>
+              <td>Free, visitors bring their own device</td>
+              <td>Whatever the software category above requires</td>
+              <td>Whatever the software category above requires</td>
+              <td>Whatever the software category above requires</td>
+              <td class="fit-high">Same as the chosen software path. Everything shipped so far runs
+              here.</td>
+            </tr>
+            <tr>
+              <td class="name">Meta Quest (passthrough MR)</td>
+              <td>Standalone headset with built-in hand tracking and passthrough video, so the real room
+              and virtual content blend without a phone in hand.</td>
+              <td>One-time hardware cost, no subscription for the device itself</td>
+              <td>Medium to high, usually via Unity or native SDKs; WebXR-in-headset-browser is a lighter
+              option</td>
+              <td>App store (Meta Horizon Store) or sideload</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium. WebXR-in-headset stays vibecodable; the native SDK path
+              inherits the same constraints as the native and engine category.</td>
+            </tr>
+            <tr>
+              <td class="name">Apple Vision Pro</td>
+              <td>visionOS headset, RealityKit and SwiftUI, the highest passthrough fidelity available
+              right now.</td>
+              <td>Expensive hardware, plus a Mac and Apple Developer account for development</td>
+              <td>High</td>
+              <td>App Store or ad-hoc install</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium, same profile as ARKit in the native and engine category, with
+              a much smaller installed base to reach.</td>
+            </tr>
+            <tr>
+              <td class="name">HoloLens 2</td>
+              <td>An enterprise-focused optical see-through headset (a genuinely transparent display,
+              not a video passthrough). Microsoft has deprioritized new hardware here, so treat this row
+              as legacy rather than a current recommendation.</td>
+              <td>Expensive, enterprise-oriented</td>
+              <td>High</td>
+              <td>Enterprise deployment tools, not a consumer app store</td>
+              <td>Yes, once installed</td>
+              <td class="fit-low">Low. Niche tooling and a shrinking ecosystem.</td>
+            </tr>
+            <tr>
+              <td class="name">Smart glasses</td>
+              <td>Two different things worth telling apart: Snap Spectacles (a real, if limited, AR
+              display with a Lens Studio development path) and Ray-Ban Meta glasses (camera, audio, and
+              on-device AI, with no AR display at all as of this writing).</td>
+              <td>Developer kits and consumer units vary widely</td>
+              <td>Depends on the device; Spectacles inherits Lens Studio's curve</td>
+              <td>Platform-locked in both cases</td>
+              <td>No</td>
+              <td class="fit-low">Low. Same constraint as the no-code platforms these devices are tied
+              to.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <strong>None of the projects behind this atlas run on dedicated hardware yet.</strong> Everything
+        so far targets a handheld phone browser, by design: it is the option with zero install friction
+        for gallery visitors and workshop participants. A headset would only make sense for a piece that
+        specifically needs both hands free for an extended, multi-visitor gallery run.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

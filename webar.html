@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebAR &middot; AR Build Atlas</title>
+<meta name="description" content="Browser-based AR frameworks: Three.js, A-Frame plus MindAR, WebXR, 8th Wall, compared with real project examples.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+    <nav class="primary">
+      <a href="index.html">overview</a>
+      <a href="webar.html" aria-current="page">webar</a>
+      <a href="nocode.html">no-code</a>
+      <a href="native.html">native and engine</a>
+      <a href="tracking.html">tracking</a>
+      <a href="hardware.html">hardware</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Category 1 of 5</p>
+    <h1>WebAR: augmented reality that runs at a URL</h1>
+    <p class="lede">No app store, no install, no account. A visitor scans a QR code or taps a link and the
+    camera, tracking, and 3D all run inside the phone browser. This is the category every project below
+    was actually shipped in, so it gets the most worked examples.</p>
+
+    <section class="category">
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What it is</th>
+              <th>Cost</th>
+              <th>Learning curve</th>
+              <th>Distribution</th>
+              <th>Offline capable</th>
+              <th>Vibecoding fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">Three.js</td>
+              <td>A JavaScript 3D library over WebGL. No AR-specific layer built in; you supply your own
+              camera feed, tracking, and anchoring.</td>
+              <td>Free, open source</td>
+              <td>Steep at first (matrices, shaders, render loop), then very flexible</td>
+              <td>URL, any modern browser</td>
+              <td>Yes, if all assets are self-hosted rather than pulled from a CDN at runtime</td>
+              <td class="fit-high">High. Plain text files, exactly what a coding agent is best at.</td>
+            </tr>
+            <tr>
+              <td class="name">A-Frame + MindAR</td>
+              <td>A-Frame is a declarative, HTML-like layer over Three.js. MindAR adds image and face
+              tracking on top.</td>
+              <td>Free, open source</td>
+              <td>Gentle. Scenes read almost like markup rather than 3D code.</td>
+              <td>URL</td>
+              <td>Yes, if self-hosted</td>
+              <td class="fit-high">High. Config-driven setups (one entry per work) fit an agent well.</td>
+            </tr>
+            <tr>
+              <td class="name">WebXR Device API</td>
+              <td>The browser's own native immersive-ar session API: real 6dof tracking and hit-testing,
+              no third-party library required.</td>
+              <td>Free</td>
+              <td>Medium. The API itself is small, but browser support gaps force workarounds.</td>
+              <td>URL, Chrome for Android only in practice; no iOS Safari support as of this writing</td>
+              <td>Yes</td>
+              <td class="fit-med">Medium. The gap is platform support, not code complexity.</td>
+            </tr>
+            <tr>
+              <td class="name">8th Wall</td>
+              <td>A hosted SDK (now under Niantic Spatial) that adds robust 6dof world tracking and
+              image tracking to the browser, including on iOS Safari where raw WebXR does not reach.</td>
+              <td>Subscription, tiered by traffic and features</td>
+              <td>Medium. Mostly wiring their JS APIs and camera pipeline rather than building tracking
+              from scratch.</td>
+              <td>URL</td>
+              <td>No. Requires their runtime and a license check at load time.</td>
+              <td class="fit-med">Medium. Still text-based code, but you are working inside their SDK's
+              constraints rather than a fully open stack.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Where this shows up in shipped work</h2>
+
+      <div class="case-study">
+        <span class="tag">Uncanny Garden</span>
+        <p>Three.js plus MediaPipe HandLandmarker: five elements bloom from hand gestures, tracked entirely
+        in-browser with no marker and no server. Shows the ceiling of what raw Three.js plus a tracking
+        library can do without any hosted AR SDK.</p>
+      </div>
+
+      <div class="case-study">
+        <span class="tag">Elemental WebAR (RMIT teaching kit)</span>
+        <p>A-Frame plus MindAR image tracking, config-driven: one JSON entry and two asset files per student
+        work, no code changes needed to add a new piece. Shows the gentler on-ramp for students who have
+        never touched 3D code.</p>
+      </div>
+
+      <div class="case-study">
+        <span class="tag">Touch of Water</span>
+        <p>Three.js with DRACOLoader-compressed models and Howler.js audio, paired with a Leaflet satellite
+        map landing page. Five student teams each contributed a GPS point, model, and sound to one shared
+        engine.</p>
+      </div>
+
+      <div class="case-study">
+        <span class="tag">gelora-soil (vanitas)</span>
+        <p>Three.js plus MediaPipe HandLandmarker and FaceLandmarker together: a procedural flower rooted
+        to a palm or grown from a mouth, with self-hosted MediaPipe models and wasm to avoid depending on
+        a CDN at a venue with restricted wifi.</p>
+      </div>
+
+      <div class="note">
+        <strong>A recurring lesson across these projects:</strong> MediaPipe's wasm runtime and model files
+        are CDN-hosted by default. Venue wifi that cannot reach jsdelivr or Google's storage will break hand
+        or face tracking silently. Self-hosting those files under <code>public/</code> is the fix, and
+        gelora-soil already does this.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

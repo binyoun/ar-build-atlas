@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Native and engine &middot; AR Build Atlas</title>
+<meta name="description" content="Native and game-engine AR paths: Unity plus AR Foundation, Unreal Engine, ARKit and RealityKit, ARCore.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+    <nav class="primary">
+      <a href="index.html">overview</a>
+      <a href="webar.html">webar</a>
+      <a href="nocode.html">no-code</a>
+      <a href="native.html" aria-current="page">native and engine</a>
+      <a href="tracking.html">tracking</a>
+      <a href="hardware.html">hardware</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Category 3 of 5</p>
+    <h1>Native and engine-based AR</h1>
+    <p class="lede">Full game engines and platform SDKs, distributed through an app store rather than a
+    URL. This is where the ceiling on visual fidelity and interaction complexity is highest, and also
+    where vibecoding stops covering the whole job: a real editor (Unity, Unreal, Xcode) does work a
+    text-only coding agent cannot fully replace.</p>
+
+    <section class="category">
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>What it is</th>
+              <th>Cost</th>
+              <th>Learning curve</th>
+              <th>Distribution</th>
+              <th>Offline capable</th>
+              <th>Vibecoding fit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name">Unity + AR Foundation</td>
+              <td>Cross-platform game engine (C#) with a unified layer over ARKit and ARCore, so one
+              project targets both iOS and Android.</td>
+              <td>Free up to a revenue and funding threshold, then a paid plan</td>
+              <td>Medium to high: the engine, its editor, and C# all need learning together</td>
+              <td>App store, or a sideloaded build</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium. An agent can write solid C# scripts, but scene assembly, prefab
+              wiring, and inspector settings happen by hand in the Unity Editor.</td>
+            </tr>
+            <tr>
+              <td class="name">Unity + Vuforia</td>
+              <td>An image and object-tracking plugin for Unity, useful when AR Foundation's built-in
+              tracking is not precise enough for a specific physical object.</td>
+              <td>Adds a separate license cost on top of Unity</td>
+              <td>Medium, on top of Unity's own curve</td>
+              <td>Same as Unity above</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium, same constraint as Unity above.</td>
+            </tr>
+            <tr>
+              <td class="name">Unreal Engine (AR)</td>
+              <td>C++ and Blueprints, aimed at the highest-fidelity real-time visuals, with an AR
+              framework layered over ARKit/ARCore.</td>
+              <td>Free until a revenue threshold, then a royalty</td>
+              <td>High. The heaviest engine here, with the steepest ramp.</td>
+              <td>App store</td>
+              <td>Yes, once installed</td>
+              <td class="fit-low">Low. Blueprint visual scripting does not map well to a text-based coding
+              agent, and C++ plus the editor is a heavier lift than the other options here.</td>
+            </tr>
+            <tr>
+              <td class="name">ARKit + RealityKit</td>
+              <td>Apple's native AR framework and 3D renderer, written in Swift, for iOS, iPadOS, and
+              visionOS.</td>
+              <td>Free, but needs a Mac plus a paid Apple Developer account (about 99 USD a year) to
+              distribute</td>
+              <td>Medium. Swift itself is approachable; Xcode's project and interface tooling is not.</td>
+              <td>App Store, or ad-hoc install</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium. An agent can write Swift well, but testing needs a physical
+              iPhone or simulator and a Mac, which is a real barrier outside that ecosystem.</td>
+            </tr>
+            <tr>
+              <td class="name">ARCore + Kotlin</td>
+              <td>Google's native AR framework for Android, in Kotlin or Java, the Android counterpart
+              to ARKit.</td>
+              <td>Free, needs an Android Developer account (one-time fee) to publish</td>
+              <td>Medium, similar profile to ARKit</td>
+              <td>Google Play, or a sideloaded APK</td>
+              <td>Yes, once installed</td>
+              <td class="fit-med">Medium, same profile as ARKit above.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <strong>None of the projects behind this atlas use this category yet.</strong> Everything shipped
+        so far has stayed inside the browser. If a future piece genuinely needs app-store distribution,
+        offline installation with no network at all, or console-grade rendering that WebGL cannot reach,
+        this is the honest next step, and it is worth treating as a real scope change rather than
+        something to vibecode the same way as a WebAR project.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AR Build Atlas</title>
+<meta name="description" content="A map of the ways to build augmented reality work: browser WebAR, no-code creator platforms, native and engine paths, tracking approaches, and hardware.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+    <nav class="primary">
+      <a href="index.html" aria-current="page">overview</a>
+      <a href="webar.html">webar</a>
+      <a href="nocode.html">no-code</a>
+      <a href="native.html">native and engine</a>
+      <a href="tracking.html">tracking</a>
+      <a href="hardware.html">hardware</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">Orientation</p>
+    <h1>The whole landscape for building AR, mapped in one place</h1>
+    <p class="lede">Browser WebAR is one path into augmented reality, and it is the one this atlas leans on for
+    working examples. It sits alongside no-code creator platforms, native and game-engine builds, headset paths,
+    and a handful of tracking approaches that cut across all of them. Each category page has a comparison table
+    and, where relevant, a real project as a worked example.</p>
+
+    <section class="category">
+      <h2>Five categories</h2>
+      <div class="card-grid">
+        <a class="card" href="webar.html">
+          <h3>WebAR</h3>
+          <p>Runs in a phone browser at a URL. No install, no app store. Three.js, A-Frame plus MindAR,
+          WebXR, 8th Wall.</p>
+        </a>
+        <a class="card" href="nocode.html">
+          <h3>No-code / creator platforms</h3>
+          <p>Visual editors built for fast social filters and effects. Meta Spark, Lens Studio, Adobe Aero,
+          Zapworks, Niantic Studio.</p>
+        </a>
+        <a class="card" href="native.html">
+          <h3>Native and engine</h3>
+          <p>Full game engines and platform SDKs. Unity, Unreal, ARKit and RealityKit, ARCore.</p>
+        </a>
+        <a class="card" href="tracking.html">
+          <h3>Tracking approaches</h3>
+          <p>The technique underneath any of the above: marker, markerless SLAM, face, hand, GPS,
+          cloud anchors.</p>
+        </a>
+        <a class="card" href="hardware.html">
+          <h3>Hardware and headsets</h3>
+          <p>What the work runs on: handheld phone, Quest passthrough, Vision Pro, HoloLens, smart glasses.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="category">
+      <h2>A rough decision guide</h2>
+      <ul class="decision-list">
+        <li><strong>Want a URL you can share or a QR code you can print, zero install, and full control
+        of the code:</strong> WebAR. This is the path Claude Code fits best, since it is plain HTML, JS,
+        and a few libraries with no proprietary editor in the loop.</li>
+        <li><strong>Want a fast effect distributed on an existing social platform, and do not need to own
+        the pipeline:</strong> a no-code creator platform matched to that platform (Lens Studio for
+        Snapchat, Meta Spark for Instagram and Facebook, if it is still open to public creators, worth
+        checking).</li>
+        <li><strong>Want console-grade 3D, physics, or multiplayer, and app store distribution is fine:</strong>
+        native or engine. This is where vibecoding stops being the whole story: the editor (Unity, Unreal,
+        Xcode) does real work that a text-only coding agent cannot do for you.</li>
+        <li><strong>Want hands-free, room-scale, or a multi-hour gallery install where visitors do not
+        hold a phone:</strong> a headset path, usually paired with a native or engine build.</li>
+        <li><strong>Not sure yet what tracking the idea needs:</strong> start on the tracking page. It
+        cuts across every category above and usually narrows the choice fastest.</li>
+      </ul>
+    </section>
+
+    <section class="category">
+      <h2>Glossary</h2>
+      <dl class="glossary">
+        <dt>WebXR Device API</dt>
+        <dd>The browser's own API for immersive AR and VR sessions. Support is uneven: strong on Chrome
+        for Android, absent from iOS Safari as of this writing.</dd>
+
+        <dt>SLAM</dt>
+        <dd>Simultaneous localization and mapping. The technique a phone or headset uses to build a live
+        3D map of a room and track its own position inside it, with no printed marker needed.</dd>
+
+        <dt>Markerless tracking</dt>
+        <dd>Any tracking that anchors content to the real world without a printed image or object, usually
+        via SLAM and plane detection.</dd>
+
+        <dt>Cloud anchors</dt>
+        <dd>A 3D anchor point saved to a server so multiple devices can see the same virtual object fixed
+        to the same real-world spot, at the same time or later.</dd>
+
+        <dt>Vibecoding fit</dt>
+        <dd>Shorthand used across this atlas for how much of a path can be built by describing intent to a
+        coding agent versus how much requires manual work inside a proprietary visual editor.</dd>
+      </dl>
+    </section>
+
+    <div class="note">
+      <strong>A note on currency.</strong> Platform names, pricing, and ownership in this space change
+      often (Niantic's AR platform business, for one example, has been restructured more than once).
+      Treat every table here as a starting map, not a live price sheet, and verify details before
+      committing real time or budget.
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>
