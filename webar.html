@@ -12,15 +12,22 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
-    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
-    <nav class="primary">
-      <a href="index.html">overview</a>
-      <a href="webar.html" aria-current="page">webar</a>
-      <a href="nocode.html">no-code</a>
-      <a href="native.html">native and engine</a>
-      <a href="tracking.html">tracking</a>
-      <a href="hardware.html">hardware</a>
-    </nav>
+    <div class="header-right">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" data-search-input placeholder="Search options" aria-label="Search AR build options">
+        <div class="search-results" data-search-results></div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+      <nav class="primary">
+        <a href="index.html">overview</a>
+        <a href="webar.html" aria-current="page">webar</a>
+        <a href="nocode.html">no-code</a>
+        <a href="native.html">native and engine</a>
+        <a href="tracking.html">tracking</a>
+        <a href="hardware.html">hardware</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -47,92 +54,7 @@
               <th>Used in</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="name">Three.js</td>
-              <td>A JavaScript 3D library over WebGL. No AR-specific layer built in; you supply your own
-              camera feed, tracking, and anchoring.</td>
-              <td>Free, open source</td>
-              <td>Steep at first (matrices, shaders, render loop), then very flexible</td>
-              <td>URL, any modern browser</td>
-              <td>Yes, if all assets are self-hosted rather than pulled from a CDN at runtime</td>
-              <td class="fit-high">High. Plain text files, exactly what a coding agent is best at.</td>
-              <td class="used-in">Uncanny Garden, Touch of Water, gelora-soil (vanitas)</td>
-            </tr>
-            <tr>
-              <td class="name">A-Frame + MindAR</td>
-              <td>A-Frame is a declarative, HTML-like layer over Three.js. MindAR adds image and face
-              tracking on top.</td>
-              <td>Free, open source</td>
-              <td>Gentle. Scenes read almost like markup rather than 3D code.</td>
-              <td>URL</td>
-              <td>Yes, if self-hosted</td>
-              <td class="fit-high">High. Config-driven setups (one entry per work) fit an agent well.</td>
-              <td class="used-in">Elemental WebAR (RMIT teaching kit)</td>
-            </tr>
-            <tr>
-              <td class="name">Babylon.js</td>
-              <td>A JavaScript 3D engine in the same territory as Three.js, but with more built in out of
-              the box: a hosted node material editor, physics, and animation curve tooling.</td>
-              <td>Free, open source</td>
-              <td>Medium to steep, similar to Three.js, with less that needs to be hand-built</td>
-              <td>URL</td>
-              <td>Yes, if self-hosted</td>
-              <td class="fit-high">High. Same plain-JS profile as Three.js.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">PlayCanvas</td>
-              <td>A WebGL game engine with both a hosted, collaborative visual editor for scene assembly
-              and a code layer for behavior, sitting between Three.js's roll-your-own approach and a full
-              desktop engine.</td>
-              <td>Free tier, paid tiers for private projects and team seats</td>
-              <td>Medium. The editor covers layout, code covers logic.</td>
-              <td>URL, either self-hosted export or a PlayCanvas-hosted link</td>
-              <td>Yes, if exported and self-hosted</td>
-              <td class="fit-med">Medium. The code layer is agent-friendly, but scene setup lives in their
-              hosted editor, not in files an agent can edit directly.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">model-viewer</td>
-              <td>Google's <code>&lt;model-viewer&gt;</code> web component: one HTML tag drops a 3D model
-              into a page and hands off to the phone's native AR viewer (Scene Viewer on Android, AR
-              Quick Look on iOS) instead of running its own AR session.</td>
-              <td>Free, open source</td>
-              <td>Very low, one HTML tag</td>
-              <td>URL for the page; the AR view itself opens the OS-level viewer app</td>
-              <td>The model file can be self-hosted; the OS viewer itself is a system component you do
-              not control</td>
-              <td class="fit-med">Medium for the web page itself, but there is no custom AR interaction
-              to build since the OS viewer owns that part entirely.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">WebXR Device API</td>
-              <td>The browser's own native immersive-ar session API: real 6dof tracking and hit-testing,
-              no third-party library required.</td>
-              <td>Free</td>
-              <td>Medium. The API itself is small, but browser support gaps force workarounds.</td>
-              <td>URL, Chrome for Android only in practice; no iOS Safari support as of this writing</td>
-              <td>Yes</td>
-              <td class="fit-med">Medium. The gap is platform support, not code complexity.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">8th Wall</td>
-              <td>A hosted SDK (now under Niantic Spatial) that adds robust 6dof world tracking and
-              image tracking to the browser, including on iOS Safari where raw WebXR does not reach.</td>
-              <td>Subscription, tiered by traffic and features</td>
-              <td>Medium. Mostly wiring their JS APIs and camera pipeline rather than building tracking
-              from scratch.</td>
-              <td>URL</td>
-              <td>No. Requires their runtime and a license check at load time.</td>
-              <td class="fit-med">Medium. Still text-based code, but you are working inside their SDK's
-              constraints rather than a fully open stack.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-          </tbody>
+          <tbody data-options-category="webar"></tbody>
         </table>
       </div>
 
@@ -150,6 +72,9 @@
   <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
 </footer>
 
+<script src="assets/js/data.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/nav.js"></script>
 </body>
 </html>

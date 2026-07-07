@@ -12,15 +12,22 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
-    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
-    <nav class="primary">
-      <a href="index.html" aria-current="page">overview</a>
-      <a href="webar.html">webar</a>
-      <a href="nocode.html">no-code</a>
-      <a href="native.html">native and engine</a>
-      <a href="tracking.html">tracking</a>
-      <a href="hardware.html">hardware</a>
-    </nav>
+    <div class="header-right">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" data-search-input placeholder="Search options" aria-label="Search AR build options">
+        <div class="search-results" data-search-results></div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+      <nav class="primary">
+        <a href="index.html" aria-current="page">overview</a>
+        <a href="webar.html">webar</a>
+        <a href="nocode.html">no-code</a>
+        <a href="native.html">native and engine</a>
+        <a href="tracking.html">tracking</a>
+        <a href="hardware.html">hardware</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -33,6 +40,48 @@
     and a handful of tracking approaches that cut across all of them. Each comparison table below ends in a
     "used in" column: where a real shipped project already uses that option, or "not yet used" where it is
     still just mapped territory.</p>
+
+    <section class="category">
+      <h2>Find the right option</h2>
+      <p>Search by keyword, or narrow by cost, distribution, offline capability, and vibecoding fit.
+      This searches every option across all five categories at once; picking a result jumps straight
+      to that row on its category page.</p>
+      <div class="finder">
+        <div class="finder-controls">
+          <input type="text" data-finder-input placeholder="Try &quot;offline&quot;, &quot;free&quot;, or &quot;hand tracking&quot;..." aria-label="Search all AR build options">
+          <select data-finder-filter="cost" aria-label="Filter by cost">
+            <option value="">Any cost</option>
+            <option value="free">Free</option>
+            <option value="freemium">Free tier / freemium</option>
+            <option value="subscription">Subscription</option>
+            <option value="paid-hardware">Paid hardware</option>
+          </select>
+          <select data-finder-filter="dist" aria-label="Filter by distribution">
+            <option value="">Any distribution</option>
+            <option value="url">URL</option>
+            <option value="app-store">App store</option>
+            <option value="platform-locked">Platform-locked</option>
+            <option value="enterprise">Enterprise</option>
+            <option value="varies">Varies by platform</option>
+          </select>
+          <select data-finder-filter="offline" aria-label="Filter by offline capability">
+            <option value="">Any offline capability</option>
+            <option value="yes">Offline capable</option>
+            <option value="partial">Partially offline</option>
+            <option value="no">Needs a live connection</option>
+            <option value="varies">Varies</option>
+          </select>
+          <select data-finder-filter="fit" aria-label="Filter by vibecoding fit">
+            <option value="">Any vibecoding fit</option>
+            <option value="high">High</option>
+            <option value="med">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <p class="finder-count" data-finder-count></p>
+        <div class="finder-results" data-finder-results></div>
+      </div>
+    </section>
 
     <section class="category">
       <h2>Five categories</h2>
@@ -137,6 +186,9 @@
   <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
 </footer>
 
+<script src="assets/js/data.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/nav.js"></script>
 </body>
 </html>

@@ -12,15 +12,22 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="index.html">AR Build <span>Atlas</span></a>
-    <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
-    <nav class="primary">
-      <a href="index.html">overview</a>
-      <a href="webar.html">webar</a>
-      <a href="nocode.html" aria-current="page">no-code</a>
-      <a href="native.html">native and engine</a>
-      <a href="tracking.html">tracking</a>
-      <a href="hardware.html">hardware</a>
-    </nav>
+    <div class="header-right">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" data-search-input placeholder="Search options" aria-label="Search AR build options">
+        <div class="search-results" data-search-results></div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">menu</button>
+      <nav class="primary">
+        <a href="index.html">overview</a>
+        <a href="webar.html">webar</a>
+        <a href="nocode.html" aria-current="page">no-code</a>
+        <a href="native.html">native and engine</a>
+        <a href="tracking.html">tracking</a>
+        <a href="hardware.html">hardware</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -49,77 +56,7 @@
               <th>Used in</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="name">Meta Spark Studio</td>
-              <td>Desktop node-graph editor for effects published to Instagram and Facebook's camera.</td>
-              <td>Free</td>
-              <td>Low for basic effects, medium once you add its JavaScript scripting layer.</td>
-              <td>Locked to Meta's apps</td>
-              <td>No, needs the Meta app camera</td>
-              <td class="fit-low">Low. The graph and asset work happens inside the desktop app; a coding
-              agent can help with the scripting layer only.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">Lens Studio (Snap)</td>
-              <td>Desktop editor for Snapchat Lenses, with an effect graph plus a real JavaScript
-              scripting API for custom behavior.</td>
-              <td>Free</td>
-              <td>Low to medium</td>
-              <td>Snapchat only</td>
-              <td>No, needs Snapchat's camera</td>
-              <td class="fit-med">Low to medium. Scripts are text and agent-friendly; the visual graph
-              and asset wiring are not.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">Adobe Aero</td>
-              <td>Mobile and desktop app for placing 3D content and simple interactions into real space,
-              built for designers rather than developers.</td>
-              <td>Free tier, paid Creative Cloud tiers for more</td>
-              <td>Low. Drag, drop, and trigger logic, no code.</td>
-              <td>Aero app, or a shareable web link/embed</td>
-              <td>Aero app needed, no browser-only path</td>
-              <td class="fit-low">Low. This is a visual-first tool by design.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">Zapworks (Zappar)</td>
-              <td>Web-based no-code builder for image and world tracking, with an optional JavaScript
-              layer (ZapWorks Studio) for custom logic.</td>
-              <td>Subscription, tiered</td>
-              <td>Low to medium</td>
-              <td>Zappar app, or WebAR via a universal link</td>
-              <td>No, needs their runtime</td>
-              <td class="fit-med">Low to medium. The scripting layer is agent-friendly, the builder is
-              not.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">Niantic Studio</td>
-              <td>A visual, no-code builder layered on top of 8th Wall's WebAR tracking, aimed at
-              non-developers who still want a URL-based result.</td>
-              <td>Subscription</td>
-              <td>Low</td>
-              <td>URL</td>
-              <td>No</td>
-              <td class="fit-low">Low. Same tracking engine as 8th Wall underneath, but the no-code layer
-              removes most of the room for hand-written code.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">Blippbuilder (Blippar)</td>
-              <td>A web-based, no-code AR campaign builder aimed at brands and marketing: drag-and-drop
-              scenes with image or plane tracking.</td>
-              <td>Subscription</td>
-              <td>Low to medium</td>
-              <td>Blippar app, or a WebAR link depending on plan</td>
-              <td>No</td>
-              <td class="fit-low">Low. Same profile as the other builder tools above.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-          </tbody>
+          <tbody data-options-category="nocode" data-options-group="social"></tbody>
         </table>
       </div>
 
@@ -141,31 +78,7 @@
               <th>Used in</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="name">Artivive</td>
-              <td>A platform built specifically for artists: upload a video or animation, tag a printed
-              image, canvas, or artwork as the trigger, and visitors view it through the Artivive app or
-              an embeddable web view.</td>
-              <td>Free tier for a small number of works, paid tiers for more</td>
-              <td>Very low. Upload media, tag a trigger image, done.</td>
-              <td>Artivive app, or an embeddable WebAR view on higher tiers</td>
-              <td>No, needs the app or a live web view</td>
-              <td class="fit-low">Low. This is upload-and-tag, not a coding surface at all.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-            <tr>
-              <td class="name">EyeJack</td>
-              <td>Another artist and gallery-focused AR platform, similar image-trigger model to
-              Artivive, with its own app and curation tools aimed at exhibitions and print/canvas work.</td>
-              <td>Subscription, tiered</td>
-              <td>Low</td>
-              <td>EyeJack app</td>
-              <td>No</td>
-              <td class="fit-low">Low, same profile as Artivive above.</td>
-              <td class="used-in none">Not yet used</td>
-            </tr>
-          </tbody>
+          <tbody data-options-category="nocode" data-options-group="artist"></tbody>
         </table>
       </div>
 
@@ -192,6 +105,9 @@
   <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
 </footer>
 
+<script src="assets/js/data.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/nav.js"></script>
 </body>
 </html>
