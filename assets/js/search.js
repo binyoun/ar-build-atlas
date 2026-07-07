@@ -77,7 +77,7 @@ function arRenderResultItem(opt) {
   var label = AR_CATEGORIES[opt.category].label;
   return (
     '<li><a href="' + arResultHref(opt) + '">' +
-      '<span class="badge">' + label + '</span>' +
+      '<span class="result-category">' + label + '</span>' +
       '<span class="result-name">' + opt.name + '</span>' +
       '<span class="result-snippet">' + arSnippet(opt) + '</span>' +
     '</a></li>'
