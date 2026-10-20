@@ -156,12 +156,16 @@ function arSetupFinder() {
   run();
 }
 
-/* Landing on a category page via a search result: scroll to and flash the row. */
+/* Landing on a category page via a search result: scroll to and flash the
+   option, as a card or, in the compare-table view, as a table row. */
 function arHighlightFromHash() {
   if (!location.hash || location.hash.indexOf('#opt-') !== 0) return;
-  var row = document.getElementById(location.hash.slice(1));
-  if (!row) return;
-  row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  row.classList.add('row-highlight');
-  setTimeout(function () { row.classList.remove('row-highlight'); }, 2200);
+  var id = location.hash.slice(5);
+  var tableView = document.body.classList.contains('view-table');
+  var el = tableView ? document.querySelector('tr[data-opt="' + id + '"]') : document.getElementById('opt-' + id);
+  if (!el) return;
+  var cls = tableView ? 'row-highlight' : 'flash';
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  el.classList.add(cls);
+  setTimeout(function () { el.classList.remove(cls); }, 2200);
 }

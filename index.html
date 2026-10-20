@@ -32,7 +32,9 @@
 </header>
 
 <main>
-  <div class="wrap">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
     <p class="eyebrow">Orientation</p>
     <h1>The whole landscape for building AR, mapped in one place</h1>
     <p class="lede">Browser WebAR is one path into augmented reality, and it is the one this atlas leans on for
@@ -40,6 +42,12 @@
     and a handful of tracking approaches that cut across all of them. Each comparison table below ends in a
     "used in" column: where a real shipped project already uses that option, or "not yet used" where it is
     still just mapped territory.</p>
+      <ul class="hero-stats" data-stats="all"></ul>
+      </div>
+      <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 400 400" fill="none"><defs><filter id="hg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><radialGradient id="hh"><stop offset="0%" stop-color="#FF2D9B" stop-opacity="0.35"/><stop offset="100%" stop-color="#FF2D9B" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="120" fill="url(#hh)"/><g class="spin"><circle cx="200" cy="200" r="190" stroke="#E8E8EC" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 12"/></g><circle class="pulse" cx="200" cy="200" r="150" stroke="#FF2D9B" stroke-width="3" filter="url(#hg)"/><g class="spin-rev"><circle cx="200" cy="200" r="110" stroke="#4FFFDF" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="40 14"/><circle cx="200.0" cy="90.0" r="6" fill="#FF2D9B" filter="url(#hg)"/><circle cx="304.6" cy="166.0" r="6" fill="#4FFFDF" filter="url(#hg)"/><circle cx="264.7" cy="289.0" r="6" fill="#FF2D9B" filter="url(#hg)"/><circle cx="135.3" cy="289.0" r="6" fill="#4FFFDF" filter="url(#hg)"/><circle cx="95.4" cy="166.0" r="6" fill="#FF2D9B" filter="url(#hg)"/></g><circle cx="200" cy="200" r="70" stroke="#E8E8EC" stroke-opacity="0.18"/></svg></div>
+    </div>
+  </section>
+  <div class="wrap">
 
     <section class="category">
       <h2>Find the right option</h2>
@@ -93,6 +101,7 @@
             <span class="index-desc">Runs in a phone browser at a URL. No install, no app store.
             Three.js, Babylon.js, PlayCanvas, model-viewer, A-Frame plus MindAR, WebXR, 8th Wall.</span>
           </span>
+          <span class="index-count" data-count="webar"></span>
         </a>
         <a class="index-row" href="nocode.html">
           <span class="index-num">02</span>
@@ -102,6 +111,7 @@
             gallery category. Meta Spark, Lens Studio, Adobe Aero, Zapworks, Niantic Studio, Artivive,
             EyeJack.</span>
           </span>
+          <span class="index-count" data-count="nocode"></span>
         </a>
         <a class="index-row" href="native.html">
           <span class="index-num">03</span>
@@ -110,6 +120,7 @@
             <span class="index-desc">Full game engines and platform SDKs. Unity, Unreal, ARKit and
             RealityKit, ARCore, Lightship ARDK, OpenXR, Snapdragon Spaces.</span>
           </span>
+          <span class="index-count" data-count="native"></span>
         </a>
         <a class="index-row" href="tracking.html">
           <span class="index-num">04</span>
@@ -118,6 +129,7 @@
             <span class="index-desc">The technique underneath any of the above: marker, object,
             markerless SLAM, face, hand, body, GPS, LiDAR, cloud anchors.</span>
           </span>
+          <span class="index-count" data-count="tracking"></span>
         </a>
         <a class="index-row" href="hardware.html">
           <span class="index-num">05</span>
@@ -126,6 +138,7 @@
             <span class="index-desc">What the work runs on: handheld phone, Quest passthrough, Vision
             Pro, Android XR, Magic Leap 2, HoloLens, smart glasses.</span>
           </span>
+          <span class="index-count" data-count="hardware"></span>
         </a>
       </div>
     </section>
@@ -153,39 +166,39 @@
     <section class="category">
       <h2>Glossary</h2>
       <dl class="glossary">
-        <dt>WebXR Device API</dt>
+        <div class="term"><dt>WebXR Device API</dt>
         <dd>The browser's own API for immersive AR and VR sessions. Support is uneven: strong on Chrome
-        for Android, absent from iOS Safari as of this writing.</dd>
+        for Android, absent from iOS Safari as of this writing.</dd></div>
 
-        <dt>SLAM</dt>
+        <div class="term"><dt>SLAM</dt>
         <dd>Simultaneous localization and mapping. The technique a phone or headset uses to build a live
-        3D map of a room and track its own position inside it, with no printed marker needed.</dd>
+        3D map of a room and track its own position inside it, with no printed marker needed.</dd></div>
 
-        <dt>Markerless tracking</dt>
+        <div class="term"><dt>Markerless tracking</dt>
         <dd>Any tracking that anchors content to the real world without a printed image or object, usually
-        via SLAM and plane detection.</dd>
+        via SLAM and plane detection.</dd></div>
 
-        <dt>Cloud anchors</dt>
+        <div class="term"><dt>Cloud anchors</dt>
         <dd>A 3D anchor point saved to a server so multiple devices can see the same virtual object fixed
-        to the same real-world spot, at the same time or later.</dd>
+        to the same real-world spot, at the same time or later.</dd></div>
 
-        <dt>LiDAR</dt>
+        <div class="term"><dt>LiDAR</dt>
         <dd>A dedicated depth sensor on some phones and tablets (Pro-model iPhones and iPads) that
         measures real-world geometry directly, instead of inferring it from the camera image alone.
-        Gives more accurate occlusion and instant plane detection than camera-only SLAM.</dd>
+        Gives more accurate occlusion and instant plane detection than camera-only SLAM.</dd></div>
 
-        <dt>Semantic segmentation</dt>
+        <div class="term"><dt>Semantic segmentation</dt>
         <dd>Labeling regions of a camera image by what they are (sky, ground, a building, a person),
         rather than just their raw pixels. Used by more spatially aware AR SDKs to let content react
-        differently to different kinds of surface.</dd>
+        differently to different kinds of surface.</dd></div>
 
-        <dt>OpenXR</dt>
+        <div class="term"><dt>OpenXR</dt>
         <dd>An open, cross-platform standard for VR/AR APIs, meant to let one codebase target multiple
-        headsets and runtimes without separate vendor-specific code for each one.</dd>
+        headsets and runtimes without separate vendor-specific code for each one.</dd></div>
 
-        <dt>Vibecoding fit</dt>
+        <div class="term"><dt>Vibecoding fit</dt>
         <dd>Shorthand used across this atlas for how much of a path can be built by describing intent to a
-        coding agent versus how much requires manual work inside a proprietary visual editor.</dd>
+        coding agent versus how much requires manual work inside a proprietary visual editor.</dd></div>
       </dl>
     </section>
 
@@ -199,7 +212,7 @@
 </main>
 
 <footer class="site">
-  <div class="wrap">AR Build Atlas. A working reference, not a product comparison service.</div>
+  <div class="wrap"><span>AR Build Atlas. A working reference, not a product comparison service.</span><span>Made by <a href="https://binyoun.com">Bin Youn</a> · see it in use: <a href="https://binyoun.github.io/webar/">Elemental WebAR</a></span></div>
 </footer>
 
 <script src="assets/js/data.js"></script>
