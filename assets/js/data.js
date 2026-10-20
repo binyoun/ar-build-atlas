@@ -22,7 +22,7 @@ var AR_OPTIONS = [
     distribution: "URL, any modern browser", distTier: "url",
     offline: "Yes, if all assets are self-hosted rather than pulled from a CDN at runtime", offlineTier: "yes",
     fit: "High. Plain text files, exactly what a coding agent is best at.", fitTier: "high",
-    usedIn: "Uncanny Garden, Touch of Water, gelora-soil (vanitas)"
+    usedIn: "Uncanny Garden, Touch of Water, Glitch Mori (grew out of gelora-soil)"
   },
   {
     id: "aframe-mindar", category: "webar", name: "A-Frame + MindAR",
@@ -32,7 +32,7 @@ var AR_OPTIONS = [
     distribution: "URL", distTier: "url",
     offline: "Yes, if self-hosted", offlineTier: "yes",
     fit: "High. Config-driven setups (one entry per work) fit an agent well.", fitTier: "high",
-    usedIn: "Elemental WebAR (RMIT teaching kit)"
+    usedIn: "Elemental WebAR (RMIT teaching kit); A-Frame alone: Sacred Tree: Summoning, Su XR"
   },
   {
     id: "babylon-js", category: "webar", name: "Babylon.js",
@@ -72,7 +72,7 @@ var AR_OPTIONS = [
     distribution: "URL, Chrome for Android only in practice; no iOS Safari support as of this writing", distTier: "url",
     offline: "Yes", offlineTier: "yes",
     fit: "Medium. The gap is platform support, not code complexity.", fitTier: "med",
-    usedIn: null
+    usedIn: "Sacred Tree: Summoning, Su XR (through A-Frame)"
   },
   {
     id: "8th-wall", category: "webar", name: "8th Wall",
@@ -290,7 +290,7 @@ var AR_OPTIONS = [
     distribution: "Depends on the chosen platform", distTier: "varies",
     offline: "Yes, if self-hosted", offlineTier: "yes",
     fit: "High, with MediaPipe specifically.", fitTier: "high",
-    usedIn: "gelora-soil (vanitas), grow-from-the-mouth mode"
+    usedIn: "gelora-soil (the prototype behind Glitch Mori), grow-from-the-mouth mode"
   },
   {
     id: "hand-tracking", category: "tracking", name: "Hand tracking",
@@ -300,7 +300,7 @@ var AR_OPTIONS = [
     distribution: "Depends on the chosen platform", distTier: "varies",
     offline: "Yes, if self-hosted", offlineTier: "yes",
     fit: "High, with MediaPipe specifically.", fitTier: "high",
-    usedIn: "Uncanny Garden, gelora-soil (vanitas), palm mode"
+    usedIn: "Uncanny Garden, Glitch Mori (open-palm sowing), Tứ Bình"
   },
   {
     id: "body-pose-tracking", category: "tracking", name: "Body / pose tracking",
